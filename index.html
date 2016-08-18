@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+  <link data-require="bootstrap@3.3.6" data-semver="3.3.6" rel="stylesheet" href="bootstrap" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body ng-app="flickrApp">
+  <div class="container" ng-controller="flickrController">
+    <h3 class="text-center text-uppercase">Flickr API DEMO</h3>
+    <br />
+    <form name="myForm" ng-submit="searchTags()">
+      <div class="form-group">
+        <label for="searchTags">Search Tags</label>
+        <input type="text" required="" class="form-control" id="searchTags" ng-model="searchTagsElm" placeholder="Search tags" />
+        <div class="text-muted" ng-hide="searchTagsElm == null">
+          <br /> Tag: {{searchTagsElm}}</div>
+          
+      </div>
+      <div class="text-center">
+        <button type="button" ng-disabled="myForm.$invalid" class="btn btn-primary" ng-click="searchTags()">Search</button>
+        <button type="button" ng-disabled="myForm.$invalid" class="btn btn-danger" ng-click="remove()">Clear</button>
+      </div>
+    </form>
+    <br />
+
+    <div id="fountainG" ng-show="showLoading">
+      <div id="fountainG_1" class="fountainG"></div>
+      <div id="fountainG_2" class="fountainG"></div>
+      <div id="fountainG_3" class="fountainG"></div>
+      <div id="fountainG_4" class="fountainG"></div>
+      <div id="fountainG_5" class="fountainG"></div>
+      <div id="fountainG_6" class="fountainG"></div>
+      <div id="fountainG_7" class="fountainG"></div>
+      <div id="fountainG_8" class="fountainG"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="bg-info" style="padding: 10px;" ng-show="tiles.items.length > 0">{{tiles.title}}</p>
+        <div class="row">
+          <div class="col-md-4 col-xs-6 col-sm-6" ng-repeat="i in tiles.items">
+            <img src="{{i.media.m}}" alt="{{i.title}}" class="col-xs-12 img-thumbnail img-rounded img-responsive" />
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://opensource.keycdn.com/angularjs/1.5.8/angular.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+  <script src="app.js"></script>
+  <script src="FlickrController.js"></script>
+</body>
+
+</html>
