@@ -1,0 +1,26 @@
+{
+  "name": "flickr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "FlickrController.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arunnayak/flickrphoto.git"
+  },
+  "author": "arun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arunnayak/flickrphoto/issues"
+  },
+  "homepage": "https://github.com/arunnayak/flickrphoto#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.0",
+    "lite-server": "^2.2.2"
+  }
+}
